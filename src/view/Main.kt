@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
     val line = scanner.nextLine()
     val ss = line.split("[\\s]")
     lookAndPlay(ss.toTypedArray())
-    System.out.println("按1继续播放声音，按0退出")
+    System.out.println("按1播放声音，按0退出")
     while (true){
         val op = scanner.nextLine()
         when(op){
