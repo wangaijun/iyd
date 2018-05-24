@@ -41,7 +41,6 @@ fun lookAndPlay(args: Array<String>) {
     params.put("salt", salt)
     params.put("appKey", appKey)
     val message = requestForHttp("http://openapi.youdao.com/api", params)
-    println(message)
     val r = Gson().fromJson<ResultBean>(message, ResultBean::class.java)
     val b = r.basic
     println(b)
