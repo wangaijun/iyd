@@ -2,6 +2,7 @@ package view
 
 import util.MD5.md5
 import com.google.gson.Gson
+import model.BasicBean
 import model.ResultBean
 import util.AudioPlayer
 import java.io.BufferedInputStream
@@ -18,7 +19,7 @@ fun main(args: Array<String>) {
     lookAndPlay(args)
 }
 
-fun lookAndPlay(args: Array<String>) {
+fun lookAndPlay(args: Array<String>):BasicBean? {
     val query = args[0]
     var from = "en"
     var to = "zh-CHS"
@@ -45,6 +46,7 @@ fun lookAndPlay(args: Array<String>) {
     val b = r.basic
     println(b)
     playSound(query)
+    return b
 }
 
 fun requestForHttp(urlStr: String, requestParams: Map<String, String>): String {
