@@ -3,6 +3,7 @@ package util
 import java.io.BufferedInputStream
 import java.net.HttpURLConnection
 import java.net.URL
+import java.net.URLEncoder
 
 fun postFormRequest(urlStr: String, requestParams: Map<String, String>): String {
     val sb = StringBuilder()
@@ -47,6 +48,28 @@ fun postJsonRequest(urlStr: String, body:String):String{
     val ins = conn.inputStream
     val bis = BufferedInputStream(ins)
     val bs = ByteArray(1024*2)
+    val len = bis.read(bs)
+    return String(bs,0,len)
+}
+
+fun getRequest(urlStr: String,requestParams: Map<String, String>):String{
+    val sb = StringBuilder(urlStr)
+    sb.append("?")
+    requestParams.forEach { k, v ->
+        sb.append(URLEncoder.encode(k))
+        sb.append("=")
+        sb.append(URLEncoder.encode(v))
+        sb.append("&")
+    }
+    val url = URL(sb.toString())
+    val conn = url.openConnection()
+    conn as HttpURLConnection
+    conn.addRequestProperty("Accept-Charset", "utf-8")
+    conn.addRequestProperty("X-LC-Id", "P0X9CEHNcfck0qvkuEaP3Dc7-gzGzoHsz")
+    conn.addRequestProperty("X-LC-Key", "WL5GuL34xuyg1UFRRbr3lnuv")
+    val ins = conn.inputStream
+    val bis = BufferedInputStream(ins)
+    val bs = ByteArray(2*1024*1024)
     val len = bis.read(bs)
     return String(bs,0,len)
 }
