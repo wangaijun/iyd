@@ -41,7 +41,7 @@ fun lookAndPlay(args: Array<String>):BasicBean? {
     params.put("sign", sign)
     params.put("salt", salt)
     params.put("appKey", appKey)
-    val message = requestForHttp("http://openapi.youdao.com/api", params)
+    val message = postFormRequest("http://openapi.youdao.com/api", params)
     val r = Gson().fromJson<ResultBean>(message, ResultBean::class.java)
     val b = r.basic
     println(b)
@@ -49,7 +49,7 @@ fun lookAndPlay(args: Array<String>):BasicBean? {
     return b
 }
 
-fun requestForHttp(urlStr: String, requestParams: Map<String, String>): String {
+fun postFormRequest(urlStr: String, requestParams: Map<String, String>): String {
     val sb = StringBuilder()
     requestParams.forEach{
         k,v->sb.append(k).append("=").append(v).append("&")

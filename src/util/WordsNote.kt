@@ -1,9 +1,10 @@
 package util
 
 import model.Word
+import util.data.Saver
 
 object WordsNote{
     fun save(word:Word){
-        println(word)
+        Saver().save(word)
     }
 }
