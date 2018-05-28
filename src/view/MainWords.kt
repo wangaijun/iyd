@@ -13,6 +13,7 @@ fun main(args: Array<String>) {
     val ct = System.currentTimeMillis()
     val rl = list.filter { it.reviewTime< ct }
     println("已获取待复习的词")
+    if (rl.isEmpty()) System.out.println("没有需要复习的单词")
     rl.forEach{
         println(it.q)
         println("1:详细信息,2:读音,3:信息加发音,4:认识")
