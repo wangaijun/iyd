@@ -49,7 +49,9 @@ public class DicForm {
         JFrame frame = new JFrame("DicForm");
         frame.setContentPane(new DicForm().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        frame.setSize(600,200);
+//        frame.pack();
+        frame.setLocation(1000, 500);
         frame.setVisible(true);
     }
 }
