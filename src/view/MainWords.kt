@@ -2,8 +2,8 @@ package view
 
 import util.Abhs
 import util.AudioPlayer
-import util.data.LeanCloudFinder
-import util.data.LeanCloudUpdater
+import util.data.leancloud.LeanCloudFinder
+import util.data.leancloud.LeanCloudUpdater
 import java.util.*
 
 fun main(args: Array<String>) {

@@ -1,4 +1,4 @@
-package util.data
+package util.data.leancloud
 
 import com.google.gson.Gson
 import model.Word
