@@ -7,7 +7,6 @@ import java.util.*
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
     println("请稍候，正在获取最新数据")
-//    println(System.currentTimeMillis())
     val list = LeanCloudFinder().find()
     val ct = System.currentTimeMillis()
     val rl = list.filter { it.reviewTime< ct }
