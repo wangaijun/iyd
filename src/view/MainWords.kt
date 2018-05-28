@@ -1,7 +1,9 @@
 package view
 
+import util.Abhs
 import util.AudioPlayer
 import util.data.LeanCloudFinder
+import util.data.LeanCloudUpdater
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -23,5 +25,8 @@ fun main(args: Array<String>) {
                 AudioPlayer().play(it.q)
             }
         }
+        it.reviewTime = Abhs.nextTime(it.reviewTime,it.reviewedCount)
+        it.reviewedCount = it.reviewedCount+1
+        LeanCloudUpdater().update(it)
     }
 }
