@@ -1,8 +1,9 @@
 package view
 
+import applayer.lookAndPlay
 import model.AntiLayer
 import util.AudioPlayer
-import util.WordsNote
+import applayer.WordsNote
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -17,7 +18,7 @@ fun main(args: Array<String>) {
         val q = ss[0]
         when(op){
             "1"->AudioPlayer().play(q)
-            "2"->if (basicBean!=null)WordsNote.save(AntiLayer.toWord(q,basicBean))
+            "2"->if (basicBean!=null) WordsNote.save(AntiLayer.toWord(q,basicBean))
             "0"->System.exit(0)
         }
     }

@@ -1,4 +1,4 @@
-package view
+package applayer
 
 import util.MD5.md5
 import com.google.gson.Gson
@@ -29,6 +29,12 @@ fun lookAndPlay(args: Array<String>):BasicBean? {
             }
         }
     }
+    val b = look(query, from, to)
+    playSound(query)
+    return b
+}
+
+private fun look(query: String, from: String, to: String): BasicBean? {
     val appKey = "6fe6f4309122ff9c"
     val salt = System.currentTimeMillis().toString()
     val sign = md5(appKey + query + salt + "uQZb1iiBhI9PbhMrO18VUamiTXVQsua7")
@@ -43,7 +49,6 @@ fun lookAndPlay(args: Array<String>):BasicBean? {
     val r = Gson().fromJson<ResultBean>(message, ResultBean::class.java)
     val b = r.basic
     println(b)
-    playSound(query)
     return b
 }
 
