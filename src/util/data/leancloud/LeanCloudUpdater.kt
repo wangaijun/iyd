@@ -2,8 +2,8 @@ package util.data.leancloud
 
 import com.google.gson.Gson
 import model.Word
+import util.Net.putJsonRequest
 import util.data.abs.Updater
-import util.putJsonRequest
 
 class LeanCloudUpdater: Updater(){
     override fun update(word: Word) {

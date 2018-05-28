@@ -2,8 +2,8 @@ package util.data.leancloud
 
 import com.google.gson.Gson
 import model.Word
+import util.Net.postJsonRequest
 import util.data.abs.Saver
-import util.postJsonRequest
 
 class LeanCloudSaver: Saver(){
     override fun save(w: Word) {

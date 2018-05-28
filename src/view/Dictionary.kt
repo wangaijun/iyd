@@ -5,7 +5,7 @@ import com.google.gson.Gson
 import model.BasicBean
 import model.ResultBean
 import util.AudioPlayer
-import util.postFormRequest
+import util.Net.postFormRequest
 
 
 fun main(args: Array<String>) {
