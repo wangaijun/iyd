@@ -32,11 +32,19 @@ fun postFormRequest(urlStr: String, requestParams: Map<String, String>): String 
 }
 
 fun postJsonRequest(urlStr: String, body:String):String{
+    return jsonRequest(urlStr,body,"POST")
+}
+
+fun putJsonRequest(urlStr: String, body:String):String{
+    return jsonRequest(urlStr,body,"PUT")
+}
+
+fun jsonRequest(urlStr: String, body:String, type:String):String{
     val url = URL(urlStr)
     val conn = url.openConnection()
     conn as HttpURLConnection
     conn.doOutput = true
-    conn.requestMethod = "POST"
+    conn.requestMethod = type
     conn.addRequestProperty("Accept-Charset", "utf-8")
     conn.addRequestProperty("Content-Type", "application/json")
     conn.addRequestProperty("Content-Length", body.length.toString())
