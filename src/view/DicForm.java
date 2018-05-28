@@ -31,6 +31,7 @@ public class DicForm {
     private void setViewProperty() {
         textField1.setFont(new Font("宋体",Font.BOLD,20));
         textArea1.setFont(new Font("宋体",Font.BOLD,16));
+        textArea1.setLineWrap(true);
     }
 
     private void setViewListener() {
