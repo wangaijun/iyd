@@ -1,4 +1,4 @@
-package util.data
+package util.data.abs
 
 import model.Word
 
